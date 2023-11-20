@@ -26,7 +26,7 @@ namespace Practica3
             //Leo el telegrama
             textoTelegrama = txtTelegrama.Text;
             // telegrama urgente?
-            if (cbUrgente.Checked)
+            if (rbUrgente.Checked == true)
                 tipoTelegrama = 'u';
             else
                 tipoTelegrama = 'o'; //! lo añadimos para dar al programa el conocimiento que si el CheckBox

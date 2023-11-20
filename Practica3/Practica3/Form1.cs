@@ -28,14 +28,21 @@ namespace Practica3
             // telegrama urgente?
             if (cbUrgente.Checked)
                 tipoTelegrama = 'u';
-            //Obtengo el número de palabras que forma el telegrama
-            numPalabras = textoTelegrama.Length;
+            else
+                tipoTelegrama = 'o'; //! lo añadimos para dar al programa el conocimiento que si el CheckBox
+                                     //! no está marcado, un telegramo es ordinario
+                                     //? //Obtengo el número de palabras que forma el telegrama
+                                     //? numPalabras = textoTelegrama.Length;
+                                     //! Obtengo el número de palabras que forma el telegrama
+            string[] palabras = textoTelegrama.Split(' ');
+            numPalabras = palabras.Length;
             //Si el telegrama es ordinario
             if (tipoTelegrama == 'o')
                 if (numPalabras <= 10)
-                    coste = 25;
+                    coste = 2.5; //! 25 -> 2.5
                 else
-                    coste = 0.5 * numPalabras;
+                    //? coste = 0.5 * numPalabras;
+                    coste = 2.5 + 0.5 * (numPalabras - 10); //! coste = 0.5 * numPalabras -> coste = 2.5 + 0.5 * (numPalabras - 10)
             else
             //Si el telegrama es urgente
             if (tipoTelegrama == 'u')
